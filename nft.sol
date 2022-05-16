@@ -74,12 +74,12 @@ contract TestNftToken is ERC721A, Ownable, ReentrancyGuard {
   }
   
   function setMaxSupply (uint256 amount) external onlyOwner {
-  require (amount >=totalSupply() && amount <= maxFinalSupply, "value should be between current supply and maxFinalSupply);
+  require (amount >=totalSupply() && amount <= maxFinalSupply, "value should be between current supply and maxFinalSupply");
   maxSupply = amount;
   }
   
   function resetFinalSupply () external onlyOwner {
-  finalMaxSupply = maxSupply;
+   maxFinalSupply = maxSupply;
   }
 
   function walletOfOwner(address _owner) public view returns (uint256[] memory) {
